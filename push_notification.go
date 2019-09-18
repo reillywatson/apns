@@ -14,8 +14,8 @@ import (
 // Push commands always start with command value 2.
 const pushCommandValue = 2
 
-// Your total notification payload cannot exceed 256 bytes.
-const MaxPayloadSizeBytes = 256
+// Your total notification payload cannot exceed 2048 bytes.
+const MaxPayloadSizeBytes = 2048
 
 // Every push notification gets a pseudo-unique identifier;
 // this establishes the upper boundary for it. Apple will return
@@ -41,7 +41,7 @@ const (
 // or a dictionary, represented within by an AlertDictionary struct.
 type Payload struct {
 	Alert interface{} `json:"alert,omitempty"`
-	Badge int         `json:"badge,omitempty"`
+	Badge int         `json:"badge"`
 	Sound string      `json:"sound,omitempty"`
 }
 
